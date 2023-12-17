@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registrar</title>
+    <link rel="shortcut icon" type="image/r-icon" href="Photos/PUPLogo.png" />
+    <link rel="stylesheet" href="CSS/CSS.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- PUP LOGO -->
+      <div class="header">
+        <img src="Photos/PUPLogo.png" />
+        <h1>Admission Office</h1>
+      </div>
+
+      <div class="trans-row-1">
+        <p>Select transaction</p>
+      </div>
+
+      <!-- CHECKBOXES / TRANSACTIONS -->
+      <form
+        action="Kiosk_TransactionResult.php"
+        method="post"
+        id="transactionForm"
+      >
+        <div class="transaction" id="blur">
+          <!-- lEFTSIDE BUTTONS -->
+          <div class="left-side">
+            <div class="transaction-name">
+              <button
+                type="submit"
+                id="ch1"
+                name="buttonValue"
+                class="trans-button"
+                value="Processing of Credit Subject"
+              >
+                Processing of Credit Subject
+              </button>
+            </div>
+
+            <div class="transaction-name">
+              <button
+                type="submit"
+                id="ch2"
+                name="buttonValue"
+                class="trans-button"
+                value="Processing of RZERO"
+              >
+                Processing of RZERO
+              </button>
+            </div>
+
+            <div class="transaction-name">
+              <button
+                type="submit"
+                id="ch3"
+                name="buttonValue"
+                class="trans-button"
+                value="Processing of Re-admission"
+              >
+                Processing of Re-admission
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHTSIDE BUTTONS -->
+          <div class="right-side">
+            <div class="transaction-name">
+              <button
+                type="submit"
+                id="ch4"
+                name="buttonValue"
+                class="trans-button"
+                value="Processing of Transferee"
+              >
+                Processing of Transferee
+              </button>
+            </div>
+
+            <div class="transaction-name">
+              <input
+                type="button"
+                id="ch5"
+                name="ch[]"
+                class="trans-button inquiryBtn"
+                value="Other Inquiries"
+                onclick="showOtherInquiries()"
+              />
+              <div class="other-inquiries-dropdown">
+                <div class="purpose-close">
+                  <h3>Purpose of Visit</h3>
+
+                  <i
+                    onclick="closeBtn()"
+                    class="fa-solid fa-xmark close-inquiry"
+                  ></i>
+                </div>
+
+                <input
+                  type="text"
+                  id="ch7"
+                  name="textInput"
+                  class="visible"
+                  placeholder="Type Here!"
+                />
+                <!-- Inside Other Inquiries -->
+                <div class="proceed-button">
+                  <!-- <button id="proceed" onclick="showConfirmation()">Proceed</button> -->
+                  <button
+                    type="submit"
+                    class="proceed"
+                    name="submitButton"
+                    value="Admission"
+                  >
+                    Proceed
+                  </button>
+                  <!-- onclick="showConfirmation()" -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="trans-row-1">
+        <a href="Kiosk_R&A.html" class="trans-back-button"
+          ><i class="fa-solid fa-arrow-left"></i>Back</a
+        >
+      </div>
+
+      <!-- <div class="proceed-button">
+        <a
+          class="proceed"
+          onclick="showConfirmation()"
+          name="pageClicked"
+          value="Admission"
+          >Proceed</a
+        >
+      </div> -->
+
+      <!-- PUPKiosklogo at bottom right corner of the page -->
+      <img class="PUPKiosklogo" src="Photos/PUPKioskLogo.png" />
+
+      <!-- Confirmation Modal -->
+      <div id="confirmationModal">
+        <div class="modalcontent" id="modal">
+          <h2>CONFIRM</h2>
+          <p>Are you sure with the transaction?</p>
+          <button onclick="closeModal()" id="no">NO</button>
+          <button onclick="combineUsers()" id="yes">YES</button>
+        </div>
+      </div>
+
+      <div id="overlay" class="overlay"></div>
+      <script src="script.js"></script>
+
+      <script>
+        let modalcontent = document.getElementById("modal");
+        function showConfirmation() {
+          modalcontent.classList.add("open-modalcontent");
+          document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        function closeModal() {
+          modalcontent.classList.remove("open-modalcontent");
+          document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        function combineUsers() {
+          document.getElementById("transactionForm").submit();
+        }
+
+        // ShowList Box and Button
+        const showlist = document.querySelector(".inquiryBtn");
+
+        // Inquiry button and dropdown
+        const inquiryBtn = document.querySelector(".inquiryBtn");
+        const otherQuery = document.querySelector(".other-inquiries-dropdown");
+
+        function showOtherInquiries() {
+          otherQuery.classList.toggle("visible");
+          inquiryBtn.classList.toggle("clicked");
+        }
+
+        function closeBtn() {
+          // Other Inquiries
+          otherQuery.classList.remove("visible");
+          inquiryBtn.classList.remove("clicked");
+        }
+      </script>
+    </div>
+  </body>
+</html>

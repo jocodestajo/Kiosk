@@ -1,0 +1,225 @@
+.img1 {
+  text-align: left;
+  margin-left: 600px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.title {
+  font-family: "Cinzel", serif;
+  font-style: bold;
+}
+
+.container {
+  /* display: flex;
+  justify-content: space-between; */
+  width: 1920px;
+  height: 1080px;
+
+  align-items: center;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.left-side {
+  text-align: left;
+  margin-left: 180px;
+  padding-right: 30px;
+}
+
+.right-side {
+  text-align: left;
+  margin-left: 180px;
+  padding-right: 30px;
+}
+#kiosk {
+  margin-left: 400px;
+}
+.kiosk {
+  flex: 1;
+  padding-bottom: 20px;
+  padding-left: 50px;
+}
+
+.btn1 {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 20rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.checkboxes {
+  text-align: left;
+  margin-left: 180px;
+  padding-right: 30px;
+}
+.trans {
+  text-align: left;
+  margin-left: 100px;
+  text-decoration: none;
+}
+input.checkboxes {
+  opacity: 0;
+}
+input[type="checkbox"] {
+  vertical-align: -12px;
+  position: relative;
+  accent-color: yellow;
+}
+input.Checkbox:checked + .labels {
+  background-color: rgb(255, 230, 0);
+  color: black;
+}
+
+#back-btn {
+  background-color: gray;
+  color: maroon;
+  font-style: sans-serif;
+  border-radius: 60%;
+  padding: 20px, 20px;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+}
+
+.select-trans {
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: maroon;
+}
+
+#proceed {
+  background-color: gray;
+  color: maroon;
+  font-style: sans-serif;
+  margin-left: 580px;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  padding: 10px 20px;
+  vertical-align: 50px;
+}
+
+.labels {
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10+ * px;
+  text-align: center;
+  justify-content: center;
+  background-color: maroon;
+  color: white;
+  padding: 10px;
+  border: 2px solid maroon;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  width: 300px; /* width for the transactions */
+  height: 20px; /* height for the transactions */
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+input.Checkbox {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(24, 22, 22);
+}
+
+.labels {
+  font-size: 1.4rem;
+  border: solid maroon;
+  background-color: maroon;
+  text-align: center;
+}
+.btn-proceed {
+  margin-top: 20px;
+}
+
+/* Center the modal */
+
+#confirmationModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalcontent {
+  background-color: rgb(253, 251, 251);
+  border: solid black;
+  padding: 0 30px 30px;
+  width: 400px;
+  border-radius: 6px;
+  text-align: center;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 1s, top 1s;
+  backdrop-filter: blur(10px);
+}
+.open-modalcontent {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  backdrop-filter: blur(10%);
+  z-index: 2;
+}
+
+h2 {
+  color: red;
+  font-size: 2.5rem;
+}
+
+p {
+  color: black;
+  font-size: 1.3rem;
+}
+#yes {
+  font-size: 1.5rem;
+  background-color: yellow;
+  color: black;
+  border-radius: 30px;
+  padding: 0 20px;
+}
+#no {
+  font-size: 1.5rem;
+  background-color: none;
+  color: red;
+  border-radius: 30px;
+  padding: 0 20px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.699);
+  z-index: 1;
+}

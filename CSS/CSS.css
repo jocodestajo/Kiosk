@@ -1,0 +1,470 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "arial", serif;
+  background-color: lightgray;
+
+  /* gamit ko lang kapag naka-laptop para gitna view */
+  display: flex;
+  justify-content: center;
+
+  /* Media query for screens smaller than 1920x1080 */
+  @media screen and (max-width: 1920px) {
+  }
+}
+.container {
+  /* This is the Under Body */
+  width: 1920px;
+  height: 1080px;
+
+  background-color: white;
+  padding: 80px;
+
+  position: relative;
+}
+
+.header {
+  /* Header from welcomepage to transaction page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-family: "Cinzel", serif;
+  font-size: 50px;
+}
+
+.PUPKiosklogo {
+  /* logo at right-bottom */
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+
+  width: 200px;
+}
+
+/* KIOSK WELCOME PAGE  */
+#pupname {
+  /* HEADER */
+  font-family: "Cinzel", serif;
+  margin: 50px 0px 50px 0px;
+
+  font-size: 55px;
+  color: #800500;
+}
+
+.welcomepage-logo-button {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  max-width: 1800px;
+  padding: 10px 280px 10px 300px;
+}
+
+/* Welcomepage Left-side. PUP Logo*/
+.column-1-logo {
+  flex-basis: 25px;
+  padding: 0px;
+  min-width: 450px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 10px;
+}
+.column-1-logo img {
+  width: 70%;
+  margin-bottom: 50px;
+}
+.column-1-logo h2 {
+  color: #800500;
+  text-align: center;
+}
+/* "Hello! Welcome to PUP Bataan" */
+#welcometo {
+  font-size: 50px;
+}
+#pupbataan {
+  font-size: 78px;
+}
+
+/* Welcomepage Rightside */
+.column-2-button {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+.column-2-button p {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.home-button {
+  display: flex;
+  gap: 16px;
+
+  background: #800500;
+  color: #ffffff;
+
+  padding: 24px 24px;
+  border-radius: 16px;
+
+  font-size: 24px;
+
+  transition: background 0.5s;
+}
+.home-button:hover {
+  background: #ffde00;
+  color: black;
+}
+
+/* REGISTRAR AND ADMISSION PAGE */
+.RNA {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  margin: 80px;
+}
+.RNA p {
+  font-size: 24px;
+}
+
+.rna-button {
+  display: flex;
+  gap: 16px;
+
+  background: #800500;
+  color: #fff;
+  font-size: 24px;
+
+  width: 400px;
+  padding: 24px 24px;
+  border-radius: 16px;
+
+  transition: background 0.5s;
+}
+.rna-button:hover {
+  background: #ffde00;
+  color: black;
+}
+
+.rna-back-button {
+  display: flex;
+  gap: 16px;
+
+  background: rgb(201, 201, 201);
+  color: black;
+  font-size: 24px;
+
+  width: 150px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  margin-top: 80px;
+
+  box-shadow: 2px 2px 5px #444;
+}
+
+/* REGISTRAR + ADMISSION TRANSACTION PAGE */
+/* "Select transaction" */
+.trans-row-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 50px;
+}
+.trans-row-1 p {
+  display: flex;
+  align-items: last baseline;
+
+  font-size: 24px;
+}
+
+/* Transaction Button divisions */
+.transaction {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+
+  padding: 20px 300px;
+}
+.left-side,
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.transaction-name {
+  display: flex;
+  gap: 5px;
+}
+
+.trans-button {
+  font-size: 24px;
+  background: #800500;
+  color: #ffffff;
+
+  width: 500px;
+  border-radius: 10px;
+  border: none;
+  padding: 24px 24px;
+
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+/* ShowList Box */
+.POC.clicked,
+.CAV.clicked,
+.POD.clicked {
+  background-color: #ffde00;
+  color: black;
+  border: none;
+}
+.show-POC,
+.show-CAV,
+.show-POD {
+  display: none;
+
+  background-color: #fff;
+
+  width: 700px;
+  border: 1px solid darkgray;
+}
+
+.show-POC.visible,
+.show-CAV.visible,
+.show-POD.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  position: absolute;
+  top: 22%;
+  left: 32%;
+
+  padding: 50px 30px 50px 30px;
+
+  box-shadow: 0.5px 0.5px 5px darkgrey;
+}
+.close-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.show-button {
+  font-size: 24px;
+  background: #800500;
+  color: #ffffff;
+  outline: none;
+
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 24px 24px;
+
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+/* Other Inquiries Dropdown Box */
+.other-inquiries-dropdown {
+  display: none;
+
+  background-color: #fff;
+
+  width: 700px;
+  height: 25%;
+  border: 1px solid darkgray;
+}
+
+.close-inquiry {
+  font-size: 28px;
+  color: rgb(49, 49, 49);
+  cursor: pointer;
+}
+
+.purpose-close,
+.POC-close,
+.CAV-close,
+.POD-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.purpose-close h3,
+.POC-close h3,
+.CAV-close h3,
+.POD-close h3 {
+  font-size: 24px;
+}
+
+.inquiryBtn.clicked {
+  background-color: #ffde00;
+  color: black;
+  border: none;
+}
+.other-inquiries-dropdown input {
+  font-size: 21px;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+}
+.other-inquiries-dropdown.visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 30px;
+
+  position: absolute;
+  top: 22%;
+  left: 32%;
+
+  padding: 80px 30px 80px 30px;
+
+  box-shadow: 0.5px 0.5px 5px darkgrey;
+}
+/* Other inquiries Proceed Button */
+.proceed-button {
+  display: flex;
+  justify-content: center;
+}
+.proceed {
+  display: flex;
+  justify-content: center;
+
+  background: #800500;
+  color: #fff;
+  /* background: rgb(201, 201, 201)
+  color: black; */
+  font-size: 24px;
+
+  box-shadow: 2px 2px 5px #444;
+
+  width: 150px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+
+  cursor: pointer;
+}
+
+/* Transaction Back Button */
+.trans-back-button {
+  display: flex;
+  gap: 16px;
+
+  background: rgb(201, 201, 201);
+  color: black;
+  font-size: 24px;
+
+  width: 150px;
+  padding: 10px 16px;
+  border-radius: 20px;
+
+  box-shadow: 2px 2px 5px #444;
+}
+
+/* Center the modal */
+#confirmationModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalcontent {
+  background-color: #fff;
+  border: 1px solid lightgray;
+  padding: 0 30px 30px;
+  width: 500px;
+
+  /* border-radius: 6px; */
+  text-align: center;
+
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.5s, top 0.5s;
+  backdrop-filter: blur(8px);
+
+  box-shadow: 2px 2px 2px #444;
+}
+.open-modalcontent {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background: #fff;
+  padding: 1rem;
+  backdrop-filter: blur(10%);
+  z-index: 2;
+}
+
+h2 {
+  color: #800500;
+  font-size: 2.5rem;
+}
+p {
+  color: black;
+  margin: 5px 5px;
+  /* font-size: 1.3rem; */
+}
+#yes {
+  /* font-size: 1.5rem; */
+  background-color: #ffde00;
+  color: black;
+  border-radius: 30px;
+  padding: 2px 20px;
+  margin: 5px 5px;
+}
+#no {
+  /* font-size: 1.5rem; */
+  background-color: none;
+  color: #800500;
+  border-radius: 30px;
+  padding: 2px 20px;
+  margin: 5px 5px;
+}
+p,
+#yes,
+#no {
+  font-size: 24px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.699);
+  z-index: 1;
+}

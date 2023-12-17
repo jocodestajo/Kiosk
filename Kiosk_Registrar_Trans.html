@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Registrar</title>
+    <link rel="shortcut icon" type="image/r-icon" href="Photos/PUPLogo.png" />
+    <link rel="stylesheet" href="CSS/CSS.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- PUP LOGO -->
+      <div class="header">
+        <img src="Photos/PUPLogo.png" />
+        <h1>Registrar Office</h1>
+      </div>
+
+      <div class="trans-row-1">
+        <p>Select transaction</p>
+      </div>
+
+      <!-- CHECKBOXES / TRANSACTIONS -->
+      <form
+        action="Kiosk_TransactionResult.php"
+        method="post"
+        id="transactionForm"
+      >
+        <div class="transaction" id="blur">
+          <!-- LEFTSIDE BUTTONS -->
+          <div class="left-side">
+            <div class="transaction-name">
+              <input
+                type="button"
+                id="ch1"
+                name="ch[]"
+                class="trans-button POC"
+                onclick="showList()"
+                value="Processing of Certificate"
+              />
+
+              <!-- POC ShowList / Box option -->
+              <div class="show-POC">
+                <div class="POC-close">
+                  <h3>Processing of Certificate</h3>
+
+                  <i
+                    onclick="closeBtn()"
+                    class="fa-solid fa-xmark close-inquiry"
+                  ></i>
+                </div>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Certificate of Graduation"
+                >
+                  Certificate of Graduation
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="MOI (English Medium of Instruction)"
+                >
+                  MOI (English Medium of Instruction)
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Certificate of Latin Honors"
+                >
+                  Certificate of Latin Honors
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Certificate of Enrollment"
+                >
+                  Certificate of Enrollment
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Certificate of True Copy (CTC)"
+                >
+                  Certificate of True Copy (CTC)
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Certificate for per Subject Description"
+                >
+                  Certificate for per Subject Description
+                </button>
+              </div>
+            </div>
+
+            <div class="transaction-name">
+              <input
+                type="button"
+                id="ch2"
+                name="ch[]"
+                class="show-button CAV"
+                onclick="showListCAV()"
+                value="Processing of CAV"
+              />
+
+              <!-- CAV ShowList / Box option -->
+              <div class="show-CAV">
+                <div class="CAV-close">
+                  <h3>Processing of CAV</h3>
+
+                  <i
+                    onclick="closeBtn()"
+                    class="fa-solid fa-xmark close-inquiry"
+                  ></i>
+                </div>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Button 1"
+                >
+                  Button 1
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Button 2"
+                >
+                  Button 2
+                </button>
+
+                <button
+                  type="submit"
+                  id="ch4"
+                  name="buttonValue"
+                  class="show-button"
+                  value="Button 3"
+                >
+                  Button 3
+                </button>
+              </div>
+            </div>
+
+            <div class="transaction-name">
+              <input
+                type="button"
+                id="ch3"
+                name="ch[]"
+                class="trans-button POD"
+                onclick="showListPOD()"
+                value="Processing of Documents"
+              />
+            </div>
+
+            <!-- POD ShowList / Box option -->
+            <div class="show-POD">
+              <div class="POD-close">
+                <h3>Processing of Documents</h3>
+
+                <i
+                  onclick="closeBtn()"
+                  class="fa-solid fa-xmark close-inquiry"
+                ></i>
+              </div>
+
+              <button
+                type="submit"
+                id="ch4"
+                name="buttonValue"
+                class="show-button"
+                value="Request for second copy of Diploma"
+              >
+                Request for second copy of Diploma
+              </button>
+
+              <button
+                type="submit"
+                id="ch4"
+                name="buttonValue"
+                class="show-button"
+                value="Request for second copy of TOR"
+              >
+                Request for second copy of TOR
+              </button>
+
+              <button
+                type="submit"
+                id="ch4"
+                name="buttonValue"
+                class="show-button"
+                value="Request for form 137"
+              >
+                Request for form 137
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHTSIDE BUTTONS -->
+          <div class="right-side">
+            <div class="transaction-name">
+              <button
+                type="submit"
+                onclick="generateCode('REG')"
+                id="ch4"
+                name="buttonValue"
+                class="trans-button"
+                onclick="showConfirmation()"
+                value="Processing of Honorable Dismissal"
+              >
+                Processing of Honorable Dismissal
+              </button>
+            </div>
+
+            <div class="transaction-name">
+              <button
+                type="submit"
+                onclick="generateCode('REG')"
+                id="ch5"
+                name="buttonValue"
+                class="trans-button"
+                value="Processing of Transcript of Records"
+              >
+                Processing of Transcript of Records
+              </button>
+              <!-- onclick="showConfirmation()" -->
+            </div>
+
+            <div class="transaction-name">
+              <input
+                type="button"
+                id="ch6"
+                name="ch[]"
+                class="trans-button inquiryBtn"
+                value="Other Inquiries"
+                onclick="showOtherInquiries()"
+              />
+              <div class="other-inquiries-dropdown">
+                <div class="purpose-close">
+                  <h3>Purpose of Visit</h3>
+
+                  <i
+                    onclick="closeBtn()"
+                    class="fa-solid fa-xmark close-inquiry"
+                  ></i>
+                </div>
+
+                <input
+                  type="text"
+                  id="ch7"
+                  name="textInput"
+                  placeholder="Type Here!"
+                />
+                <!-- Inside Other Inquiries class="visible"-->
+                <div class="proceed-button">
+                  <!-- <button id="proceed" onclick="showConfirmation()">Proceed</button> -->
+                  <button
+                    type="submit"
+                    onclick="generateCode('REG')"
+                    class="proceed"
+                    name="submitButton"
+                    value="Proceed"
+                  >
+                    Proceed
+                  </button>
+                  <!-- onclick="showConfirmation()" -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="trans-row-1">
+        <a href="Kiosk_R&A.html" class="trans-back-button"
+          ><i class="fa-solid fa-arrow-left"></i>Back</a
+        >
+      </div>
+
+      <!-- <div class="proceed-button">
+        <a
+          class="proceed"
+          onclick="showConfirmation()"
+          name="pageClicked"
+          value="Registrar"
+          >Proceed</a
+        >
+      </div> -->
+
+      <!-- PUPKiosklogo at bottom right corner of the page -->
+      <img class="PUPKiosklogo" src="Photos/PUPKioskLogo.png" />
+
+      <!-- Confirmation Modal -->
+      <div id="confirmationModal">
+        <div class="modalcontent" id="modal">
+          <h2>Confirm</h2>
+          <p>Are you sure with the transaction?</p>
+          <button onclick="closeModal()" id="no">NO</button>
+          <button onclick="combineUsers()" id="yes">YES</button>
+        </div>
+      </div>
+
+      <script src="ossTicket.js"></script>
+
+      <div id="overlay" class="overlay"></div>
+      <script src="script.js"></script>
+
+      <script>
+        let modalcontent = document.getElementById("modal");
+
+        function showConfirmation() {
+          modalcontent.classList.add("open-modalcontent");
+          document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        function closeModal() {
+          modalcontent.classList.remove("open-modalcontent");
+          document.getElementById("confirmationModal").style.display = "block";
+        }
+
+        function combineUsers() {
+          document.getElementById("transactionForm").submit();
+        }
+
+        // Processing of Certificate
+        const poc = document.querySelector(".POC"); // button
+        const show = document.querySelector(".show-POC"); // dropdown box
+
+        function showList() {
+          show.classList.toggle("visible"); // dropdown box
+          poc.classList.toggle("clicked"); // button
+
+          showCav.classList.remove("visible"); // dropdown box
+          cav.classList.remove("clicked"); // button
+
+          showPod.classList.remove("visible"); // dropdown box
+          pod.classList.remove("clicked"); // button
+
+          otherQuery.classList.remove("visible"); // dropdown box
+          inquiryBtn.classList.remove("clicked"); // button
+        }
+
+        // Processing of CAV
+        const cav = document.querySelector(".CAV"); // button
+        const showCav = document.querySelector(".show-CAV"); // dropdown box
+
+        function showListCAV() {
+          showCav.classList.toggle("visible"); // dropdown box
+          cav.classList.toggle("clicked"); // button
+
+          show.classList.remove("visible"); // dropdown box
+          poc.classList.remove("clicked"); // button
+
+          showPod.classList.remove("visible"); // dropdown box
+          pod.classList.remove("clicked"); // button
+
+          otherQuery.classList.remove("visible"); // dropdown box
+          inquiryBtn.classList.remove("clicked"); // button
+        }
+
+        // Processing of Documents
+        const pod = document.querySelector(".POD"); // button
+        const showPod = document.querySelector(".show-POD"); // dropdown box
+
+        function showListPOD() {
+          showPod.classList.toggle("visible"); // dropdown box
+          pod.classList.toggle("clicked"); // button
+
+          show.classList.remove("visible"); // dropdown box
+          poc.classList.remove("clicked"); // button
+
+          showCav.classList.remove("visible"); // dropdown box
+          cav.classList.remove("clicked"); // button
+
+          otherQuery.classList.remove("visible"); // dropdown box
+          inquiryBtn.classList.remove("clicked"); // button
+        }
+
+        // Other Inquiries
+        const inquiryBtn = document.querySelector(".inquiryBtn"); // Inquiry button
+        const otherQuery = document.querySelector(".other-inquiries-dropdown"); // dropdown box
+
+        function showOtherInquiries() {
+          // Other Inquiries
+          otherQuery.classList.toggle("visible"); // dropdown box
+          inquiryBtn.classList.toggle("clicked"); // button
+
+          // Processing of Certificate
+          show.classList.remove("visible"); // dropdown box
+          poc.classList.remove("clicked"); // button
+
+          // CAV
+          showCav.classList.remove("visible"); // dropdown box
+          cav.classList.remove("clicked"); // button
+
+          // POD
+          showPod.classList.remove("visible"); // dropdown box
+          pod.classList.remove("clicked"); // button
+        }
+
+        function closeBtn() {
+          // Processing of Certificate
+          show.classList.remove("visible"); // dropdown box
+          poc.classList.remove("clicked"); // button
+
+          // CAV
+          showCav.classList.remove("visible"); // dropdown box
+          cav.classList.remove("clicked"); // button
+
+          // POD
+          showPod.classList.remove("visible"); // dropdown box
+          pod.classList.remove("clicked"); // button
+
+          // Other Inquiries
+          otherQuery.classList.remove("visible"); // dropdown box
+          inquiryBtn.classList.remove("clicked"); // button
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <?php
+// Get the JSON data sent from JavaScript
+$jsonData = file_get_contents('php://input');
+
+// Decode the JSON data to PHP array
+$data = json_decode($jsonData, true);
+
+// Handle the received data (for example, you can access it like an associative array)
+if (!empty($data)) {
+    $key1Value = $data['key1'];
+    $key2Value = $data['key2'];
+    
+    // Perform operations with received data
+    // For example:
+    echo "Received data: Key1 = $key1Value, Key2 = $key2Value";
+} else {
+    echo "No data received";
+}
+?>
+    <script src="script.js"></script>
+  </body>
+</html>
